@@ -1,0 +1,8 @@
+#Write a while loop that sums the values 1 through end, inclusive.
+
+var = 0
+num = 0
+while var < end:
+    var += 1
+    num = num +var   
+print num
