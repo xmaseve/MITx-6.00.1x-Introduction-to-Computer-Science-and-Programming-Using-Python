@@ -1,0 +1,22 @@
+#Bisection Search
+
+print "Please think of a number between 0 and 100!"    
+x = 39
+low = 0
+high = 100
+guess = (low+high)/2
+print "Is your secret number " + str(guess) + "?"
+feedback = raw_input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly.")
+
+while feedback != 'c':
+    if feedback == 'l':
+        low = guess
+    elif feedback == 'h':
+        high = guess
+    else:
+        print "Sorry, I did not understand your input."
+    guess = (low+high)/2
+    print "Is your secret number " + str(guess) + "?"
+    feedback = raw_input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly.")
+
+print "Game over. Your secret number was: " + str(guess)
