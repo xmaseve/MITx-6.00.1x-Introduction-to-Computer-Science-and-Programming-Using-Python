@@ -1,0 +1,17 @@
+Monthlyinterestrate= annualInterestRate / 12.0
+PreviousBalance = balance
+Totalpaid = 0
+
+for month in range(1,13):
+    MinimumMonthlyPayment = monthlyPaymentRate * PreviousBalance
+    Totalpaid = Totalpaid + MinimumMonthlyPayment
+    MonthlyUnpaidBalance = PreviousBalance - MinimumMonthlyPayment
+    UpdatedBalanceEachMonth = MonthlyUnpaidBalance + (Monthlyinterestrate * MonthlyUnpaidBalance)
+    PreviousBalance = UpdatedBalanceEachMonth
+    print 'Month: ' + str(month)
+    print 'Minimum monthly payment: ' + str(round(MinimumMonthlyPayment,2))
+    print 'Remaining balance: ' + str(round(UpdatedBalanceEachMonth,2))
+    
+    
+print 'Total paid: ' + str(round(Totalpaid,2))
+print 'Remaining balance: ' + str(round(UpdatedBalanceEachMonth,2))
