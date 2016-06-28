@@ -1,0 +1,10 @@
+#Write a function called ndigits, that takes an integer x (either positive or negative) 
+#as an argument. This function should return the number of digits in x.
+
+def ndigits(x):
+    if x == 0:
+        return 0
+    elif len(str(abs(x))) == 1:
+        return 1
+    else:
+        return 1 + ndigits(abs(x) / 10)
